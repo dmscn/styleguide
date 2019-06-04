@@ -1,0 +1,25 @@
+@value colors: '../../assets/styles/colors.module.css';
+@value primary, gray, grayLight from colors;
+
+.Button {
+  margin: 5px;
+  background-color: transparent;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.primary {
+  composes: Button;
+  border: 2px solid primary;
+  color: primary;
+}
+
+.outline {
+  composes: Button;
+}
+
+.disabled {
+  composesbutton: Button;
+  background-color: gray;
+  color: lightGray;
+}
