@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import TodoList from "./components/TodoList";
 
 const App: React.FC = () => {
-  return <div>Hello World! I'm the app component.</div>;
+  return <TodoList />;
 };
 
 export default App;
