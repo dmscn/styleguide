@@ -36,7 +36,11 @@
     ]
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.8",
+    "@types/styled-components": "^4.1.15",
+    "classnames": "^2.2.6",
     "react-docgen-typescript": "^1.12.4",
-    "react-styleguidist": "^9.1.2"
+    "react-styleguidist": "^9.1.2",
+    "styled-components": "^4.2.1"
   }
 }
