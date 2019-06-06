@@ -24,7 +24,9 @@ export default function NewItem({ onItemCreate }: Props): JSX.Element {
   return (
     <form>
       <TextField value={todo} onChange={handleTextChange} />
-      <Button onClick={submitTodo} variant={todo ? "primary" : "disabled"} />
+      <Button onClick={submitTodo} variant={todo ? "primary" : "disabled"}>
+        Add
+      </Button>
     </form>
   );
 }

@@ -1,19 +1,22 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
+
 export interface Props {
-  variant: "disabled" | "primary" | "outline";
+  children?: ReactNode;
+  variant: "primary" | "outline" | "disabled";
   onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-export default function Button(props: Props): any {
-  const { variant, onClick, ...rest } = props;
+const variants = {
+  primary: "",
+  outline: "f6 grow br1 ba mh1 ph2 pv1 mb2 b--blue bg-white blue helvetica",
+  disabled: ""
+};
 
-  const variants = {
-    outline: "f6 grow br1 ba mh1 ph2 pv1 mb2 b--blue bg-white blue helvetica",
-    disaled: ""
-  };
+const Button = styled.button.attrs(({ variant, ...rest }: Props) => ({
+  className: variants[variant],
+  disabled: variant === "disabled",
+  ...rest
+}))<Props>``;
 
-  return styled.button.attrs<Props>({
-    className: variants.outline
-  })``;
-}
+export default Button;
