@@ -1,17 +1,19 @@
 import React, { ReactNode } from "react";
-import styles from "./Button.module.css";
+import styled from "styled-components";
 export interface Props {
-  children: ReactNode;
   variant: "disabled" | "primary" | "outline";
-  onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => any;
+  onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-export default function Button(props: Props) {
-  const { children, variant, onClick } = props;
+export default function Button(props: Props): any {
+  const { variant, onClick, ...rest } = props;
 
-  return (
-    <button className={styles[variant]} onClick={onClick}>
-      {children}
-    </button>
-  );
+  const variants = {
+    outline: "f6 grow br1 ba mh1 ph2 pv1 mb2 b--blue bg-white blue helvetica",
+    disaled: ""
+  };
+
+  return styled.button.attrs<Props>({
+    className: variants.outline
+  })``;
 }

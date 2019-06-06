@@ -41,6 +41,7 @@
     "classnames": "^2.2.6",
     "react-docgen-typescript": "^1.12.4",
     "react-styleguidist": "^9.1.2",
-    "styled-components": "^4.2.1"
+    "styled-components": "^4.2.1",
+    "tachyons": "^4.11.1"
   }
 }
