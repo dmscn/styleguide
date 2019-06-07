@@ -8,9 +8,10 @@ export interface Props {
 }
 
 const variants = {
-  primary: "",
+  primary: "f6 grow br1 ba mh1 ph2 pv1 mb2 b--blue bg-blue white helvetica",
   outline: "f6 grow br1 ba mh1 ph2 pv1 mb2 b--blue bg-white blue helvetica",
-  disabled: ""
+  disabled:
+    "f6 grow br1 ba mh1 ph2 pv1 mb2 b--black-10 bg-black-05 black-05 helvetica"
 };
 
 const Button = styled.button.attrs(({ variant, ...rest }: Props) => ({
