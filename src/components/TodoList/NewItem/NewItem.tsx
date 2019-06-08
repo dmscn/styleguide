@@ -8,7 +8,6 @@ export interface Props {
 
 export default function NewItem({ onItemCreate }: Props): JSX.Element {
   const [todo, setTodo]: [string, Function] = useState("");
-  console.log(todo);
 
   function handleTextChange(event: React.ChangeEvent<HTMLInputElement>) {
     setTodo(event.target.value);
@@ -23,7 +22,12 @@ export default function NewItem({ onItemCreate }: Props): JSX.Element {
 
   return (
     <form>
-      <TextField value={todo} onChange={handleTextChange} />
+      <TextField
+        value={todo}
+        onChange={handleTextChange}
+        placeholder="What is on your mind?"
+        autofocus
+      />
       <Button onClick={submitTodo} variant={todo ? "outline" : "disabled"}>
         Add
       </Button>
