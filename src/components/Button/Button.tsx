@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export interface Props {
   children?: ReactNode;
-  variant: "primary" | "outline" | "disabled";
+  variant?: "primary" | "outline" | "disabled";
   onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
@@ -14,10 +14,14 @@ const variants = {
     "f6 grow br1 ba mh1 ph2 pv1 mb2 b--black-10 bg-black-05 black-05 helvetica"
 };
 
-const Button = styled.button.attrs(({ variant, ...rest }: Props) => ({
-  className: variants[variant],
-  disabled: variant === "disabled",
-  ...rest
-}))<Props>``;
+const Button = styled.button.attrs((props: Props) => {
+  const { variant = "primary", ...rest } = props;
+
+  return {
+    className: variants[variant],
+    disabled: variant === "disabled",
+    ...rest
+  };
+})<Props>``;
 
 export default Button;
