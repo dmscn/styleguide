@@ -1,4 +1,5 @@
 import React from "react";
+import cn from "classnames";
 import styled from "styled-components";
 
 export interface Props {
@@ -8,9 +9,12 @@ export interface Props {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
+const commonClasses =
+  "input-reset mt1 outline-0 ba bw0 bg-transparent helvetica black-60";
+
 const variants = {
-  primary: "input-reset dim ba b--black-20 pa1 helvetica",
-  disabled: "input-reset ba b--black-10 pa1 helvetica"
+  primary: "bb b--dark-pink",
+  disabled: ""
 };
 
 const TextField = styled.input.attrs((props: Props) => {
@@ -18,7 +22,7 @@ const TextField = styled.input.attrs((props: Props) => {
 
   return {
     type: "text",
-    className: variants[variant],
+    className: cn(commonClasses, variants[variant]),
     autofocus,
     ...rest
   };
