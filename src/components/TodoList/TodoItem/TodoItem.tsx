@@ -1,30 +1,22 @@
 import React, { useState } from "react";
-import Text from "../../Text";
+import Checkbox from "../../Checkbox";
 
 export interface Props {
   item: string;
-  onSelect: Function;
+  onSelect: () => void;
 }
 
 export default function TodoItem({ item, onSelect }: Props): JSX.Element {
   const [checked, setChecked]: [boolean, Function] = useState(false);
 
-  function handleTodoCheck(event: React.MouseEvent<HTMLInputElement>) {
+  function toggleCheck() {
     setChecked(!checked);
     onSelect();
   }
 
   return (
-    <li>
-      <input
-        type="checkbox"
-        id={item}
-        checked={checked}
-        onClick={handleTodoCheck}
-      />
-      <label htmlFor={item}>
-        <Text disabled={checked}>{item}</Text>
-      </label>
+    <li onClick={toggleCheck}>
+      <Checkbox label={item} checked={checked} onClick={toggleCheck} />
     </li>
   );
 }
