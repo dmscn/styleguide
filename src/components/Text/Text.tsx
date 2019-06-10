@@ -1,18 +1,27 @@
 import React, { ReactNode } from "react";
+import cn from "classnames";
 import styled from "styled-components";
 
 export interface Props {
-  disabled: boolean;
-  children: ReactNode;
+  variant?: "body" | "title" | "subtitle";
+  disabled?: boolean;
+  children?: ReactNode;
 }
 
-export default function Text(props: Props) {
-  const { disabled = false, children } = props;
-  const fontSize = "14px";
-  const Span = styled.span`
-    font-family: "Arial", sans-serif;
-    font-size: ${fontSize};
-    color: ${disabled ? "#cecece" : "#000"};
-  `;
-  return <Span>{children}</Span>;
-}
+const commonStyle = "black-70 helvetica";
+
+const tachyons = {
+  body: "f6 fw6",
+  title: "",
+  subtitle: ""
+};
+
+const Text = styled.span.attrs((props: Props) => {
+  const { variant = "body" } = props;
+
+  return {
+    className: cn(commonStyle, tachyons[variant])
+  };
+})<Props>``;
+
+export default Text;
