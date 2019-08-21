@@ -13,7 +13,7 @@ const commonClasses =
   "input-reset mt1 outline-0 ba bw0 bg-transparent helvetica black-60";
 
 const variants = {
-  primary: "bb b--dark-pink",
+  primary: "bg-washed-pink",
   disabled: ""
 };
 

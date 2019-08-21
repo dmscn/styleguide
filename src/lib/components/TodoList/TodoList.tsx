@@ -4,7 +4,7 @@ import NewItem from "./NewItem";
 
 const tachyons = {
   element:
-    "flex flex-column justify-end ph4 pv1 bg-washed-red ba b--dark-pink bw1 br1"
+    "flex flex-column overflow-y-scroll justify-end ph4 pv1 bg-washed-red ba b--dark-pink bw1 br1"
 };
 
 export default function TodoList(): JSX.Element {
